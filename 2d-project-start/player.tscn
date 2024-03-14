@@ -1,0 +1,121 @@
+[gd_scene load_steps=10 format=3 uid="uid://dmt1fle0pdfrc"]
+
+[ext_resource type="Script" path="res://player.gd" id="1_a8gf0"]
+[ext_resource type="PackedScene" uid="uid://pbmyh1qru7p" path="res://characters/happy_boo/happy_boo.tscn" id="1_owmu1"]
+[ext_resource type="PackedScene" uid="uid://lr1cgtw8shxg" path="res://gun.tscn" id="3_lqkfo"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_kolev"]
+radius = 31.0161
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_5v3sy"]
+radius = 42.0119
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_2b2ia"]
+bg_color = Color(0.152941, 0.168627, 0.188235, 1)
+corner_radius_top_left = 8
+corner_radius_top_right = 8
+corner_radius_bottom_right = 8
+corner_radius_bottom_left = 8
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_dg111"]
+bg_color = Color(0.623529, 0.866667, 0.317647, 1)
+corner_radius_top_left = 8
+corner_radius_top_right = 8
+corner_radius_bottom_right = 8
+corner_radius_bottom_left = 8
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ls4b5"]
+bg_color = Color(0.152941, 0.168627, 0.188235, 0.772549)
+border_color = Color(0, 0, 0, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_5ttnv"]
+bg_color = Color(0.768627, 0.113725, 0.239216, 1)
+border_color = Color(0, 0, 0, 1)
+
+[node name="Player" type="CharacterBody2D" groups=["player"]]
+platform_floor_layers = 4294901760
+script = ExtResource("1_a8gf0")
+
+[node name="HappyBoo" parent="." instance=ExtResource("1_owmu1")]
+unique_name_in_owner = true
+position = Vector2(2, 35)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(1, 30)
+shape = SubResource("CircleShape2D_kolev")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+
+[node name="Gun" parent="." instance=ExtResource("3_lqkfo")]
+position = Vector2(0, -24)
+
+[node name="HurtBox" type="Area2D" parent="."]
+unique_name_in_owner = true
+collision_layer = 0
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="HurtBox"]
+position = Vector2(2, 22)
+shape = SubResource("CircleShape2D_5v3sy")
+debug_color = Color(0.662745, 0, 0.490196, 0.419608)
+
+[node name="HealthBar" type="ProgressBar" parent="."]
+unique_name_in_owner = true
+offset_left = -67.0
+offset_top = -106.0
+offset_right = 67.0
+offset_bottom = -79.0
+theme_override_styles/background = SubResource("StyleBoxFlat_2b2ia")
+theme_override_styles/fill = SubResource("StyleBoxFlat_dg111")
+value = 100.0
+show_percentage = false
+
+[node name="HealthBarLabel" type="Label" parent="HealthBar"]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -11.5
+offset_right = 20.0
+offset_bottom = 11.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+
+[node name="ExpBar" type="ProgressBar" parent="."]
+unique_name_in_owner = true
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -60.0
+offset_top = -77.0
+offset_right = -54.0
+offset_bottom = -65.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(20.28, 1)
+theme_override_constants/outline_size = 1
+theme_override_styles/background = SubResource("StyleBoxFlat_ls4b5")
+theme_override_styles/fill = SubResource("StyleBoxFlat_5ttnv")
+value = 50.0
+rounded = true
+show_percentage = false
+
+[node name="CharacterLevelLabel" type="Label" parent="."]
+unique_name_in_owner = true
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -952.0
+offset_top = -531.0
+offset_right = -735.0
+offset_bottom = -496.0
+grow_horizontal = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 25
