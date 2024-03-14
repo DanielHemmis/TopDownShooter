@@ -74,10 +74,10 @@ Settings/Show_Tooltips=true
 
 [application]
 
-config/name="Your First 2D Game With Godot 4: START (GDQuest)"
-run/main_scene="res://survivorsgame.tscn"
+config/name="Top Down Shooter"
+run/main_scene="res://game.tscn"
 config/features=PackedStringArray("4.2", "Forward Plus")
-config/icon="res://icon.png"
+config/icon="res://characters/slime/slime_body.png"
 
 [display]
 

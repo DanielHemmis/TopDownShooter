@@ -1,8 +1,8 @@
 [gd_scene load_steps=5 format=3 uid="uid://v6ai4rs05o3j"]
 
-[ext_resource type="PackedScene" uid="uid://dmt1fle0pdfrc" path="res://player.tscn" id="1_lqqou"]
-[ext_resource type="Script" path="res://survivorsgame.gd" id="1_u8rg5"]
-[ext_resource type="PackedScene" uid="uid://b22tgraix52mn" path="res://pine_tree.tscn" id="2_h5tfu"]
+[ext_resource type="Script" path="res://game.gd" id="1_ufyr7"]
+[ext_resource type="PackedScene" uid="uid://dmt1fle0pdfrc" path="res://player.tscn" id="2_6d7m5"]
+[ext_resource type="PackedScene" uid="uid://b22tgraix52mn" path="res://pine_tree.tscn" id="3_qmu7b"]
 
 [sub_resource type="Curve2D" id="Curve2D_vfcq0"]
 _data = {
@@ -12,7 +12,7 @@ point_count = 5
 
 [node name="Game" type="Node2D"]
 y_sort_enabled = true
-script = ExtResource("1_u8rg5")
+script = ExtResource("1_ufyr7")
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 layer = -1
@@ -64,7 +64,7 @@ theme_override_font_sizes/font_size = 50
 text = "35"
 horizontal_alignment = 2
 
-[node name="Player" parent="." instance=ExtResource("1_lqqou")]
+[node name="Player" parent="." instance=ExtResource("2_6d7m5")]
 position = Vector2(989, 530)
 
 [node name="Path2D" type="Path2D" parent="Player"]
@@ -76,28 +76,28 @@ unique_name_in_owner = true
 position = Vector2(-157, -169)
 rotation = -0.000856531
 
-[node name="PineTree" parent="." instance=ExtResource("2_h5tfu")]
+[node name="PineTree" parent="." instance=ExtResource("3_qmu7b")]
 position = Vector2(437, 607)
 
-[node name="PineTree2" parent="." instance=ExtResource("2_h5tfu")]
+[node name="PineTree2" parent="." instance=ExtResource("3_qmu7b")]
 position = Vector2(746, 206)
 
-[node name="PineTree3" parent="." instance=ExtResource("2_h5tfu")]
+[node name="PineTree3" parent="." instance=ExtResource("3_qmu7b")]
 position = Vector2(1666, 846)
 
-[node name="PineTree4" parent="." instance=ExtResource("2_h5tfu")]
+[node name="PineTree4" parent="." instance=ExtResource("3_qmu7b")]
 position = Vector2(1276, 826)
 
-[node name="PineTree5" parent="." instance=ExtResource("2_h5tfu")]
+[node name="PineTree5" parent="." instance=ExtResource("3_qmu7b")]
 position = Vector2(1479, 293)
 
-[node name="PineTree6" parent="." instance=ExtResource("2_h5tfu")]
+[node name="PineTree6" parent="." instance=ExtResource("3_qmu7b")]
 position = Vector2(193, 904)
 
-[node name="PineTree7" parent="." instance=ExtResource("2_h5tfu")]
+[node name="PineTree7" parent="." instance=ExtResource("3_qmu7b")]
 position = Vector2(227, 265)
 
-[node name="PineTree8" parent="." instance=ExtResource("2_h5tfu")]
+[node name="PineTree8" parent="." instance=ExtResource("3_qmu7b")]
 position = Vector2(1151, 272)
 
 [node name="Timer" type="Timer" parent="."]
