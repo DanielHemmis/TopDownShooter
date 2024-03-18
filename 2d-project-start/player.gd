@@ -52,3 +52,9 @@ func add_level():
 	print(str("Level: ", level))
 	experience_needed *= 1.1
 	max_health = max_health * 1.05
+	
+func gain_health(amount):
+	if health + amount >= max_health:
+		health = max_health
+	else:
+		health += amount
