@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://dmt1fle0pdfrc"]
+[gd_scene load_steps=12 format=3 uid="uid://dmt1fle0pdfrc"]
 
 [ext_resource type="Script" path="res://player.gd" id="1_a8gf0"]
 [ext_resource type="PackedScene" uid="uid://pbmyh1qru7p" path="res://characters/happy_boo/happy_boo.tscn" id="1_owmu1"]
@@ -31,6 +31,12 @@ border_color = Color(0, 0, 0, 1)
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_5ttnv"]
 bg_color = Color(0.768627, 0.113725, 0.239216, 1)
 border_color = Color(0, 0, 0, 1)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_kqqla"]
+radius = 39.0512
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_n2min"]
+radius = 207.617
 
 [node name="Player" type="CharacterBody2D" groups=["player"]]
 platform_floor_layers = 4294901760
@@ -119,3 +125,26 @@ offset_bottom = -496.0
 grow_horizontal = 2
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/font_size = 25
+
+[node name="PickUpGravity" type="Area2D" parent="."]
+collision_layer = 32
+collision_mask = 32
+gravity_space_override = 1
+gravity_point = true
+gravity_point_unit_distance = 50.0
+gravity_point_center = Vector2(0, 0)
+gravity_direction = Vector2(0, 0)
+gravity = 1500.0
+
+[node name="PickUpRadius" type="Area2D" parent="PickUpGravity"]
+collision_layer = 32
+collision_mask = 32
+
+[node name="CollectionRadius" type="CollisionShape2D" parent="PickUpGravity/PickUpRadius"]
+shape = SubResource("CircleShape2D_kqqla")
+
+[node name="GravityRadius" type="CollisionShape2D" parent="PickUpGravity"]
+shape = SubResource("CircleShape2D_n2min")
+debug_color = Color(0.964706, 0, 0.486275, 0.419608)
+
+[connection signal="body_entered" from="PickUpGravity/PickUpRadius" to="." method="_on_pick_up_radius_body_entered"]

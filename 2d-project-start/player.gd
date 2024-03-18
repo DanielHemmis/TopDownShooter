@@ -58,3 +58,7 @@ func gain_health(amount):
 		health = max_health
 	else:
 		health += amount
+
+func _on_pick_up_radius_body_entered(body):
+	if body.has_method("give_health"):
+		body.give_health()
