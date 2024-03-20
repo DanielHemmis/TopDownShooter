@@ -7,6 +7,7 @@
 radius = 17.0294
 
 [node name="PineTree" type="StaticBody2D"]
+scale = Vector2(0.5, 0.5)
 
 [node name="GroundShadow" type="Sprite2D" parent="."]
 modulate = Color(0.764706, 0.905882, 0.968627, 1)

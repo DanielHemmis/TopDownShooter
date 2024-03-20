@@ -1,14 +1,14 @@
 [gd_scene load_steps=12 format=3 uid="uid://dmt1fle0pdfrc"]
 
 [ext_resource type="Script" path="res://player.gd" id="1_a8gf0"]
-[ext_resource type="PackedScene" uid="uid://pbmyh1qru7p" path="res://characters/happy_boo/happy_boo.tscn" id="1_owmu1"]
 [ext_resource type="PackedScene" uid="uid://lr1cgtw8shxg" path="res://gun.tscn" id="3_lqkfo"]
+[ext_resource type="PackedScene" uid="uid://cq78twn6mtdqf" path="res://player_body.tscn" id="4_i5sa4"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_kolev"]
-radius = 31.0161
+radius = 11.0454
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_5v3sy"]
-radius = 42.0119
+radius = 12.0
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_2b2ia"]
 bg_color = Color(0.152941, 0.168627, 0.188235, 1)
@@ -33,27 +33,26 @@ bg_color = Color(0.768627, 0.113725, 0.239216, 1)
 border_color = Color(0, 0, 0, 1)
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_kqqla"]
-radius = 39.0512
+radius = 10.4403
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_n2min"]
-radius = 207.617
+radius = 63.6396
 
 [node name="Player" type="CharacterBody2D" groups=["player"]]
 platform_floor_layers = 4294901760
 script = ExtResource("1_a8gf0")
 
-[node name="HappyBoo" parent="." instance=ExtResource("1_owmu1")]
+[node name="PlayerBody" parent="." instance=ExtResource("4_i5sa4")]
 unique_name_in_owner = true
-position = Vector2(2, 35)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(1, 30)
+position = Vector2(-1, 10)
 shape = SubResource("CircleShape2D_kolev")
 
 [node name="Camera2D" type="Camera2D" parent="."]
+zoom = Vector2(2, 2)
 
 [node name="Gun" parent="." instance=ExtResource("3_lqkfo")]
-position = Vector2(0, -24)
 
 [node name="HurtBox" type="Area2D" parent="."]
 unique_name_in_owner = true
@@ -61,7 +60,7 @@ collision_layer = 0
 collision_mask = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="HurtBox"]
-position = Vector2(2, 22)
+position = Vector2(0, 6)
 shape = SubResource("CircleShape2D_5v3sy")
 debug_color = Color(0.662745, 0, 0.490196, 0.419608)
 

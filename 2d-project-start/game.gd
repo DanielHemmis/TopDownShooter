@@ -25,6 +25,8 @@ func _on_timer_timeout():
 	spawn_mob()
 
 func _on_player_health_depleted():
+	%Player.get_node("PlayerBody").play_death_animation()
+	
 	set_process(false)
 	%GameOver.visible = true
 	get_tree().paused = true

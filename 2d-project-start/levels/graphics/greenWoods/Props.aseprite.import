@@ -1,0 +1,14 @@
+[remap]
+
+importer="aseprite_wizard.plugin.noop"
+type="PackedDataContainer"
+uid="uid://crrf5lxvnlkh"
+path="res://.godot/imported/Props.aseprite-0792f5cf55052f083d6a026a1cf7904d.res"
+
+[deps]
+
+source_file="res://levels/graphics/greenWoods/Props.aseprite"
+dest_files=["res://.godot/imported/Props.aseprite-0792f5cf55052f083d6a026a1cf7904d.res"]
+
+[params]
+

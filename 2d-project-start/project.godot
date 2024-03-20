@@ -91,7 +91,7 @@ project/assembly_name="Getting started with Godot 4"
 
 [editor_plugins]
 
-enabled=PackedStringArray("res://addons/colorpicker_presets/plugin.cfg")
+enabled=PackedStringArray("res://addons/AsepriteWizard/plugin.cfg", "res://addons/colorpicker_presets/plugin.cfg")
 
 [input]
 
@@ -122,7 +122,10 @@ move_down={
 
 [layer_names]
 
+2d_physics/layer_1="Player"
+2d_physics/layer_2="Enemies"
 3d_physics/layer_2="player"
+2d_physics/layer_3="World"
 2d_physics/layer_6="Pickups"
 
 [physics]

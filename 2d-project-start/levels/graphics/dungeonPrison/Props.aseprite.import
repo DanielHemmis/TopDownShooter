@@ -1,0 +1,14 @@
+[remap]
+
+importer="aseprite_wizard.plugin.noop"
+type="PackedDataContainer"
+uid="uid://oc03dmhbuemu"
+path="res://.godot/imported/Props.aseprite-815586664063f60b379596bc722a77bb.res"
+
+[deps]
+
+source_file="res://levels/graphics/dungeonPrison/Props.aseprite"
+dest_files=["res://.godot/imported/Props.aseprite-815586664063f60b379596bc722a77bb.res"]
+
+[params]
+

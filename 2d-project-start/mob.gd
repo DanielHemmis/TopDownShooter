@@ -5,12 +5,15 @@ var drop_chance_health : int = 10
 var health : int = 3
 var experience_given : int = 10
 
+#movement
+@export var maxSpeed : float = 150
+
 func _ready():
 	%Slime.play_walk()
 
 func _physics_process(_delta):
 	var direction : Vector2 = global_position.direction_to(player.global_position)
-	velocity = direction * 300.0
+	velocity = direction * maxSpeed
 	move_and_slide()
 
 func take_damage():

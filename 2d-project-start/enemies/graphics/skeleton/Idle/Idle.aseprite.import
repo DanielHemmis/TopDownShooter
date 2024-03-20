@@ -1,0 +1,14 @@
+[remap]
+
+importer="aseprite_wizard.plugin.noop"
+type="PackedDataContainer"
+uid="uid://b2yr0pbmebmmn"
+path="res://.godot/imported/Idle.aseprite-bfb3048965016fe7c366b371a50f294e.res"
+
+[deps]
+
+source_file="res://enemies/graphics/skeleton/Idle/Idle.aseprite"
+dest_files=["res://.godot/imported/Idle.aseprite-bfb3048965016fe7c366b371a50f294e.res"]
+
+[params]
+
